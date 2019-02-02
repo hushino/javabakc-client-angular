@@ -1,0 +1,43 @@
+<!-- <div class="contenedor">
+  <div class="elemento">
+    <div class="sada1" *ngFor="let serie of dataService.serie">
+      <img (click)="onShowSerie(serie.id)" class="rounded" src="{{serie.backgroundimage}}" alt="Italian Trulli">
+      <h5>{{serie.title}}</h5>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="row">
+  <div class="section">
+    <div class="col s12 m3 14 x12" *ngFor="let serie of dataService.serie">
+      <img (click)="onShowSerie(serie.id)" class="responsive-img" src="{{serie.backgroundimage}}" alt="Italian Trulli">
+      <h5>{{serie.title}}</h5>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="mat-app-background" fxLayout="row wrap" fxLayoutAlign="start">
+  <mat-card *ngFor="let serie of dataService.serie">
+    <img (click)="onShowSerie(serie.id)" class="responsive-img" src="{{serie.backgroundimage}}" alt="Italian Trulli">
+    <h5>{{serie.title}}</h5>
+  </mat-card>
+</div>
+ -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let serie of dataService.serie">
+      <img (click)="onShowSerie(serie.id)" class="responsive-img" src="{{serie.backgroundimage}}" alt="Italian Trulli">
+      <h5>{{serie.title}}</h5>
+    </div>
+  </div>
+</div> -->
+<div class="columns is-multiline is-variable is-2-mobile is-2-tablet is-3-desktop is-4-widescreen is-2-fullhd" style="padding-left: 15px;">
+  <div class="column is-3" *ngFor="let serie of dataService.serie  | paginate: { itemsPerPage: 8, currentPage: p }">
+    <figure class="image">
+      <img (click)="onShowSerie(serie.id)" class="image1" src="{{serie.backgroundimage}}" alt="{{serie.title}}">
+    </figure>
+    <h5>{{serie.title}}</h5>
+  </div>
+</div>
+<section class="section">
+  <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+</section>

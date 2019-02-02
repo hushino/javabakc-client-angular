@@ -1,0 +1,127 @@
+<section class="false-section is-mobile" style="margin: -10px 0 0px;" *ngFor="let serie of dataService.serie">
+  <h1 class="title title2">{{serie.title}}</h1>
+  <div class="backg" [style.backgroundImage]="'url('+ serie.frontimage +')'"></div>
+</section>
+
+<div class="columns is-multiline is-centered" *ngFor="let serie of dataService.serie">
+  <div class="column is-4">
+    <figure class="image">
+      <img class="image1" src="{{serie.backgroundimage}}" alt="{{serie.title}}">
+    </figure>
+  </div>
+
+  <div class="column">
+    <h2 class="title titlearriva"> {{serie.title}} <span class="tag is-info type">{{serie.type}}</span></h2>
+    <h1 class="title sino">Sinopsis</h1>
+
+    <div class="tags">
+      <span class="tag is-info tagss" *ngFor="let tag of serie.tags" (click)="onShowTag(tag.id,tag.gender)">
+        {{tag.gender}}</span>
+    </div>
+    <p class="subtitle"> {{serie.synopsis | slice:0:880}}... </p>
+    <div class="column">
+      <table class="table ">
+        <thead>
+          <tr></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let episode of serie.episode | paginate: { itemsPerPage: 3, currentPage: p }">
+            <td>
+              <i class="fas fa-play-circle padinIcon" style="color: #00bcf2;font-size: 20px;height: 20px;"></i>
+            </td>
+            <td>
+              <figure class="image is-128x128 padin">
+                <img class="responsive-img" src="{{episode.imageCap}}" alt="{{serie.title}}">
+              </figure>
+            </td>
+            <td>
+              <h5 class="level-item padin" (click)="onShowEpisode(episode.parentID,episode.id)">{{episode.title}}</h5>
+              <p id="app">Episodio {{episode.episode}}</p>
+            </td>
+            <td>
+              <h5></h5>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+<section class="section">
+  <div id="disqus_thread"></div>
+</section>
+
+
+
+
+
+
+<!--
+
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas.
+          Nullam condimentum luctus turpis.
+        </p>
+      </div>
+
+
+
+<div class="contenedor">
+  <div class="elemento">
+    <div class="inicio" *ngFor="let serie of dataService.serie">
+
+      <img class="align-self-start mr-3 animeImage img-fluid rounded" src="{{serie.backgroundimage}}" alt="{{serie.title}}">
+
+      <h2 class="titlde"> {{serie.title}} </h2>
+      <p id="app"> {{serie.synopsis | slice:0:180}}... </p>
+      <div class="col tags">
+        <ul id="app" *ngFor="let tag of serie.tags"> {{tag.gender}}</ul>
+      </div>
+      <section class="section">
+        <ul *ngFor="let episode of serie.episode">
+          <li class="far fa-play-circle">
+            <img class="img-fluid rounded" src="{{episode.imageCap}}" alt="{{serie.title}}">
+            <h5 (click)="onShowEpisode(episode.parentID,episode.id)">{{episode.title}}</h5>
+            <p id="app">Episodio {{episode.episode}}</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="contenedor">
+  <div class="row">
+    <div class="col s12 m6 14 x12" *ngFor="let serie of dataService.serie">
+
+      <img class="responsive-img" src="{{serie.backgroundimage}}" alt="{{serie.title}}">
+
+      <h2 class="titlde"> {{serie.title}} </h2>
+      <p id="app"> {{serie.synopsis | slice:0:180}}... </p>
+      <div class="col tags">
+        <ul id="app" *ngFor="let tag of serie.tags"> {{tag.gender}}</ul>
+      </div>
+      <section class="section">
+        <ul *ngFor="let episode of serie.episode">
+          <li class="far fa-play-circle">
+            <img class="responsive-img" src="{{episode.imageCap}}" alt="{{serie.title}}">
+            <h5 (click)="onShowEpisode(episode.parentID,episode.id)">{{episode.title}}</h5>
+            <p id="app">Episodio {{episode.episode}}</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,29 @@
+.episodetitle {
+  color: #000;
+  padding: 0;
+  line-height: 35px;
+  text-align: left;
+  font-size: 25px;
+  letter-spacing: -2px;
+  line-height: 30px;
+  white-space: normal;
+  overflow: inherit;
+  padding: 5px 0;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, .5);
+  /* Semi-transparent */
+}
+
+.highlight {
+  position: relative;
+  z-index: 11;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-three-fifths is-8">
+      <div class="elementovideo" *ngFor="let episode of dataService.serie">
+        <div>
+          <h5 class="episodetitle" (click)="onShowSerie(episode.id)">
+            {{episode.title}} Episodio {{episode.episode}}
+          </h5>
+        </div>
+      </div>
+      <div class="ads">
+        <div id="player">
+          <h6>Loading...</h6>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+    </div>
+  </div>
+</div>
+
+<div id="disqus_thread"></div>

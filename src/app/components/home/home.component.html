@@ -1,0 +1,77 @@
+<!-- <div class="contenedor">
+  <div class="elemento">
+    <div class="caps" *ngFor="let serie of dataService.serie">
+      <img (click)="onShowEpisode(serie.parentID,serie.id)" class="rounded" src="{{serie.imageCap}}" alt="Italian Trulli">
+      <h6> {{serie.title | slice : 0: 25}}...</h6>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="container mat-app-background">
+  <div class="row">
+    <div class="section">
+      <div class="col s12 m4 14 x12" *ngFor="let serie of dataService.serie">
+        <img (click)="onShowEpisode(serie.parentID,serie.id)" class="responsive-img" src="{{serie.imageCap}}" alt="Italian Trulli">
+        <h6> {{serie.title | slice : 0: 25}}...</h6>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <mat-card class="demo-panel">
+  <mat-card-title>
+    Angular Material Menu Demo
+  </mat-card-title>
+  <mat-card-content>
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+      Open Menu
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="subMenu">
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voicemail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+
+    <mat-menu #subMenu="matMenu">
+      <button mat-menu-item>General</button>
+      <button mat-menu-item>Display</button>
+      <button mat-menu-item>Profile</button>
+    </mat-menu>
+
+  </mat-card-content>
+</mat-card> -->
+
+<!-- <div class="mat-app-background fullheight" fxLayout="row wrap" fxLayoutAlign="start">
+  <mat-card class="carta" *ngFor="let serie of dataService.serie">
+    <img mat-card-image (click)="onShowEpisode(serie.parentID,serie.id)" class="responsive-img" src="{{serie.imageCap}}"
+      alt="Italian Trulli">
+    <h6 mat-card-title> {{serie.title | slice : 0: 150}}</h6>
+  </mat-card>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let serie of dataService.serie">
+      <img (click)="onShowEpisode(serie.parentID,serie.id)" class="responsive-img" src="{{serie.imageCap}}" alt="Italian Trulli">
+      <h6> {{serie.title | slice : 0: 25}}...</h6>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="columns is-multiline is-variable is-2-mobile is-2-tablet is-3-desktop is-4-widescreen is-2-fullhd" style="padding-left: 15px;">
+  <div class="column is-2 " *ngFor="let serie of dataService.serie">
+    <figure class="image">
+      <img (click)="onShowEpisode(serie.parentID,serie.id)" class="is-roundedd" src="{{serie.imageCap}}" alt="Italian Trulli">
+    </figure>
+    <h6 class="texthome"> {{serie.title | slice : 0: 200 }} episodio {{serie.episode}}</h6>
+  </div>
+</div>

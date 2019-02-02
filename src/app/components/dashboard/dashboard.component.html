@@ -1,0 +1,194 @@
+<section class="section editar-eliminar">
+  <div class="columns">
+    <div class="column columid">
+      <form #serieForm="ngForm" (ngSubmit)="addSerie(serieForm)">
+        <!-- <input class="input" type="number" name="id" #id="ngModel" [(ngModel)]="dataService.selectedSerie.id"> -->
+        <!-- <input class="input" type="number" name="id" #id="ngModel" [(ngModel)]="dataService.selectedSerie.id">
+       -->
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" name="title" #name="ngModel" [(ngModel)]="dataService.selectedSerie.title"
+              placeholder="Enter your Title">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Sinopsis</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Enter your Sinopsis" name="synopsis" #name="ngModel" [(ngModel)]="dataService.selectedSerie.synopsis"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Tipo</label>
+          <div class="control">
+            <input class="input" type="text" name="type" placeholder="Enter your type" #name="ngModel" [(ngModel)]="dataService.selectedSerie.type">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Fecha de Finalizacion</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter FechadeFinalizacion" name="fechadeFinalizacion" #name="ngModel"
+              [(ngModel)]="dataService.selectedSerie.fechadeFinalizacion">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Fecha de Emision</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter Fecha de Emision" name="fechadeEmision" #name="ngModel"
+              [(ngModel)]="dataService.selectedSerie.fechadeEmision">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">State</label>
+          <div class="control">
+            <input class="input" type="text" name="state" placeholder="Enter State" #name="ngModel" [(ngModel)]="dataService.selectedSerie.state">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Background Image</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter Background Image" name="backgroundimage" #name="ngModel"
+              [(ngModel)]="dataService.selectedSerie.backgroundimage">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Front Image</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter front Image" name="frontimage" #name="ngModel"
+              [(ngModel)]="dataService.selectedSerie.frontimage">
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-text">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- end of forms -->
+    <!-- star of the table -->
+    <div class="column">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><abbr title="ID">ID</abbr></th>
+            <th><abbr title="Title">Title</abbr></th>
+            <th><abbr title="Accions">Accions</abbr></th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th><abbr title="ID">ID</abbr></th>
+            <th><abbr title="Title">Title</abbr></th>
+            <th><abbr title="Accions">Accions</abbr></th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr *ngFor="let serie of dataService.serie">
+            <td>{{ serie.id }}</td>
+            <td>{{ serie.title }}</td>
+            <td>
+              <a (click)="editSerie(serie)">
+                <i class="button is-primary">
+                  <fa-icon icon="pencil-alt"></fa-icon>edit
+                </i>
+              </a>
+              <a (click)="deleteSerie(serie.id, serieForm)">
+                <i class="button is-danger" style="margin-left: 10px;">
+                  <fa-icon icon="exclamation-triangle"></fa-icon>delete
+                </i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- <section class="section agregar-serie">
+  <div class="columns">
+    <div class="column columid">
+      <form #serieForm="ngForm" (ngSubmit)="addSerie(serieForm)">
+
+
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" name="title"  placeholder="Enter your Title">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Sinopsis</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Enter your Sinopsis" name="synopsis" ></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">type</label>
+          <div class="control">
+            <input class="input" type="text" name="type" placeholder="Enter your type"  >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Fecha de Finalizacion</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter FechadeFinalizacion" name="fechadeFinalizacion"  >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Fecha de Emision</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter Fecha de Emision" name="fechadeEmision"  >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">State</label>
+          <div class="control">
+            <input class="input" type="text" name="state" placeholder="Enter State"  >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Background Image</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter Background Image" name="backgroundimage"  >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Front Image</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter front Image" name="frontimage"  >
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-text">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section> -->

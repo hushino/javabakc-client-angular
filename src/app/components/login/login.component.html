@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="columns">
+    <div class="column idcolum">
+      <form [formGroup]="form" method="" role="form">
+        <div class="form-group">
+          <div class="field">
+            <label for="user">User name</label>
+            <div class="control">
+              <input class="input" type="text" id="user" formControlName="user" name="user">
+            </div>
+          </div>
+          <div class="field">
+            <label for="user">Password</label>
+            <div class="control">
+              <input class="input" type="password" id="user" formControlName="user" name="user">
+            </div>
+          </div>
+          <div class="field">
+            <label for="user">Confirm Password</label>
+            <div class="control">
+              <input class="input" type="password" id="user2" formControlName="user2" name="user2">
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="button is-link idbutton" (click)="checkUser()">Submit</button>
+
+      </form>
+
+      <div *ngIf="cookieService.get('Token'); else templateName">
+        true
+      </div>
+
+      <ng-template #templateName>
+        false
+      </ng-template>
+    </div>
+  </div>
+</div>
