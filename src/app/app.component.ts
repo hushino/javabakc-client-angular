@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CookieService } from 'angular2-cookie/core';
+import { HttpClient, HttpHeaders, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+  constructor(
+    public cookieService: CookieService,
+    private http: HttpClient
+  ) { }
 }

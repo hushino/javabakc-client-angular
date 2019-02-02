@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Client</title>
@@ -8,7 +9,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:500" rel="stylesheet">
   <app-root></app-root>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
+
+</script>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Streaming</strong> by <a href="">Jeremy Thomas</a>. The source code is licensed
+      <a href="">MIT</a>. The website content
+      is licensed <a href="">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
+<script>
+  var disqus_config = function () {
+    this.page.url = 'https://animevrgamescom.com/'; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'as'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://streaming-3.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="bulma-toast.min.js"></script>
+
 </html>
